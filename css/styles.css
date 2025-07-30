@@ -1,0 +1,41 @@
+header {
+    position: relative;
+    height: 300px;
+    background-color: lightgray;
+}
+
+header h1, header p {
+    padding-left: 40px;
+}
+
+h1 {
+    margin-top: 40px;
+}
+
+nav {
+    position: sticky !important;
+    width: 100dvw;
+    top: 0;
+    left: 0;
+    padding-left: 10px !important;
+}
+
+/* main */
+main {
+height: auto;
+}
+
+#perso-list {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.card {
+    width: 18rem;
+    padding: 10px;
+}
+
+.card div {
+    display: flex;
+    gap: 10px;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/javascript/script.js""></script>
+    <title>Création de personnage</title>
+</head>
+<body>
+    <h1>Création de personnage</h1>
+    <form>
+        <div class="form-group">
+            <label for="perso-name">Nom&nbsp;:</label>
+            <input type="text" class="form-control" id="perso-name" placeholder="José Bocoudechoses">
+        </div>
+        <div class="form-group">
+            <label for="perso-classe">Classe&nbsp;:</label>
+            <select class="form-control" id="perso-classe">
+            <option value="Artificier">Artificier</option>
+            <option value="Barbare">Barbare</option>
+            <option value="Barde">Barde</option>
+            <option value="Clerc">Clerc</option>
+            <option value="Druide">Druide</option>
+            <option value="Ensorceleur">Ensorceleur</option>
+            <option value="Guerrier">Guerrier</option>
+            <option value="Magicien">Magicien</option>
+            <option value="Occultiste">Occultiste</option>
+            <option value="Paladin">Paladin</option>
+            <option value="Rôdeur">Rôdeur</option>
+            <option value="Roublard">Roublard</option>
+            </select>
+        </div>
+        <!-- désactiver les options sur certaines armes en fonction de la classe choisie -->
+        <div class="form-group">
+            <label for="perso-arme">Arme&nbsp;:</label>
+            <select class="form-control" id="perso-classe">
+            <option value="Bâton">Bâton</option>
+            <option value="Dague">Dague</option>
+            <option value="Gourdin"></option>
+            <option value="Hachette"></option>
+            <option value="Javeline"></option>
+            <option value="Lance"></option>
+            <option value="Marteau léger"></option>
+            <option value="Masse d'armes"></option>
+            <option value="Massue"></option>
+            <option value="Serpe"></option>
+            <option value="Arbalète légère"></option>
+            <option value="Arc court"></option>
+            <option value="Fléchette"></option>
+            <option value="Fronde"></option>
+            <option value="Cimeterre"></option>
+            <option value="Coutille"></option>
+            <option value="Epée à deux mains"></option>
+            <option value="Epée courte"></option>
+            <option value="Epée longue"></option>
+            <option value="Fléau d'armes"></option>
+            <option value="Fouet"></option>
+            <option value="Hache à deux mains"></option>
+            <option value="Hache d'armes"></option>
+            <option value="Hallebarde"></option>
+            <option value="Lance d'arçon"></option>
+            <option value="Maillet"></option>
+            <option value="Marteau de guerre"></option>
+            <option value="Morgenstern"></option>
+            <option value="Pic de guerre"></option>
+            <option value="Pique"></option>
+            <option value="Rapière"></option>
+            <option value="Trident"></option>
+            <option value="Arbalète de poing"></option>
+            <option value="Arbalète lourde"></option>
+            <option value="Arc long"></option>
+            <option value="Filet"></option>
+            <option value="Sarbacane"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="perso-constitution">Constitution</label>
+            <input type="number" min="0" max="20" class="form-control" id="perso-constitution" rows="3">
+        </div>
+        <div class="form-group">
+            <label for="perso-force">Force</label>
+            <input type="number" min="0" max="20" class="form-control" id="perso-force" rows="3">
+        </div>
+        <div class="form-group">
+            <label for="perso-agilite">Agilité</label>
+            <input type="number" min="0" max="20" class="form-control" id="perso-agilite" rows="3">
+        </div>
+        <div class="form-group">
+            <label for="perso-intelligence">Intelligence</label>
+            <input type="number" min="0" max="20" class="form-control" id="perso-intelligence" rows="3">
+        </div>
+        <div class="form-group">
+            <label for="perso-sagesse">Sagesse</label>
+            <input type="number" min="0" max="20" class="form-control" id="perso-sagesse" rows="3">
+        </div>
+        <div class="form-group">
+            <label for="perso-charisme">Charisme</label>
+            <input type="number" min="0" max="20" class="form-control" id="perso-charisme" rows="3">
+        </div>
+        <button type="submit" class="btn btn-primary">Créer</button>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
