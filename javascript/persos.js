@@ -1,4 +1,4 @@
-// js pour le ajoutPerso.html
+// js pour les personnages
 let getPersos = localStorage.getItem("allPersos");
 let personnages = getPersos ? JSON.parse(getPersos, 'UTF-8') : [];
 
@@ -24,4 +24,11 @@ function createPerso() {
 function savePersos(personnages) {
     let allPersos = JSON.stringify(personnages);
     localStorage.setItem("allPersos", allPersos);
+}
+
+// supprimer un personnage
+function deletePerso(indice) {
+    personnages.splice(indice,1);
+    savePersos(personnages);
+    document.location.reload();
 }

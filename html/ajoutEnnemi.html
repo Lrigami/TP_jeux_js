@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/javascript/ennemis.js" defer></script>
+    <title>Création d'ennemi</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/index.html">Accueil</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/html/ajoutPerso.html">Créer un personnage</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Créer un ennemi</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h1 style="text-align: center;">Création d'ennemis</h1>
+    <main>
+        <form id="new-ennemi-form" onsubmit="createEnnemi()" action="../index.html">
+            <div class="form-group">
+                <label for="ennemi-name">Nom&nbsp;:</label>
+                <input type="text" class="form-control" id="ennemi-name" placeholder="ex.: loup-garou" required>
+            </div>
+            <div class="form-group">
+                <label for="ennemi-taille">Taille&nbsp;:</label>
+                <select class="form-control" id="ennemi-taille" required>
+                <option value="Très petite">Très petit</option>
+                <option value="Petite">Petite</option>
+                <option value="Moyenne">Moyenne</option>
+                <option value="Grande">Grande</option>
+                <option value="Très grande">Très grande</option>
+                <option value="Gigantesque">Gigantesque</option>
+                </select>
+            </div>
+            <!-- désactiver les options sur certaines armes en fonction de la classe choisie -->
+            <div class="form-group">
+                <label for="ennemi-type">Type&nbsp;:</label>
+                <select class="form-control" id="ennemi-type" required>
+                <option value="Aberration">Aberration</option>
+                <option value="Artificiel">Artificiel</option>
+                <option value="Bête">Bête</option>
+                <option value="Céleste">Céleste</option>
+                <option value="Dragon">Dragon</option>
+                <option value="Elémentaire">Elémentaire</option>
+                <option value="Fée">Fée</em></option>
+                <option value="Fiélon">Fiélon</option>
+                <option value="Géant">Géant</option>
+                <option value="Humanoïde">Humanoïde</option>
+                <option value="Monstruosité">Monstruosité</option>
+                <option value="Mort-vivant">Mort-vivant</option>
+                <option value="Plante">Plante</option>
+                <option value="Vase">Vase</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ennemi-résistance">Résistances (Maintenir Shift enfoncé pour en sélectionner plusieurs)</label>
+                <select class="form-select" id="ennemi-résistances" multiple>
+                    <option value="Acide">Acide</option>
+                    <option value="Contondant">Contondant</option>
+                    <option value="Feu">Feu</option>
+                    <option value="Force">Force</option>
+                    <option value="Foudre">Foudre</option>
+                    <option value="Froid">Froid</option>
+                    <option value="Nécrotique">Nécrotique</option>
+                    <option value="Perforant">Perforant</option>
+                    <option value="Poison">Poison</option>
+                    <option value="Psychique">Psychique</option>
+                    <option value="Radiant">Radiant</option>
+                    <option value="Tonnerre">Tonnerre</option>
+                    <option value="Tranchant">Tranchant</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ennemi-vulnérabilités">Vulnérabilités (Maintenir Shift enfoncé pour en sélectionner plusieurs)</label>
+                <select class="form-select" id="ennemi-vulnérabilités" multiple>
+                    <option value="Acide">Acide</option>
+                    <option value="Contondant">Contondant</option>
+                    <option value="Feu">Feu</option>
+                    <option value="Force">Force</option>
+                    <option value="Foudre">Foudre</option>
+                    <option value="Froid">Froid</option>
+                    <option value="Nécrotique">Nécrotique</option>
+                    <option value="Perforant">Perforant</option>
+                    <option value="Poison">Poison</option>
+                    <option value="Psychique">Psychique</option>
+                    <option value="Radiant">Radiant</option>
+                    <option value="Tonnerre">Tonnerre</option>
+                    <option value="Tranchant">Tranchant</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ennemi-immunités">Immunités (Maintenir Shift enfoncé pour en sélectionner plusieurs)</label>
+                <select class="form-select" id="ennemi-immunités" multiple>
+                    <option value="Acide">Acide</option>
+                    <option value="Contondant">Contondant</option>
+                    <option value="Feu">Feu</option>
+                    <option value="Force">Force</option>
+                    <option value="Foudre">Foudre</option>
+                    <option value="Froid">Froid</option>
+                    <option value="Nécrotique">Nécrotique</option>
+                    <option value="Perforant">Perforant</option>
+                    <option value="Poison">Poison</option>
+                    <option value="Psychique">Psychique</option>
+                    <option value="Radiant">Radiant</option>
+                    <option value="Tonnerre">Tonnerre</option>
+                    <option value="Tranchant">Tranchant</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ennemi-fp">Facteur de puissance (FP)</label>
+                <select class="form-select" id="ennemi-fp" multiple>
+                    <option value="0">0</option>
+                    <option value="1/8">1/8</option>
+                    <option value="1/4">1/4</option>
+                    <option value="1/2">1/2</option>
+                    <!-- insérer en JS -->
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit-new-ennemi-form">Créer</button>
+        </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
