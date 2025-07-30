@@ -1,44 +1,31 @@
 let persoList = document.getElementById("perso-list");
+let persoCardTemplate = document.querySelector("template");
+console.log(persoCardTemplate);
 
-let personnage = {
-    "nom": "Jean Treparlaforce",
-    "classe": "Barbare",
-    "arme": "Hache à deux mains",
-    "endurance": 80,
-    "force": 90,
-    "agilite": 20,
-    "intelligence": 25
-}
+let getPersos = localStorage.getItem("allPersos");
+console.log(getPersos);
+let personnages = getPersos ? JSON.parse(getPersos, 'UTF-8') : [];
 
+// create cards based on personnages array 
 function createPersoCards(perso) {
-    let persoCard = document.createElement("div");
-    persoCard.classList.add("card");
-    let persoName = document.createElement("h2");
-    persoName.textContent = perso.nom;
-    persoName.classList.add("card-title");
-    persoCard.appendChild(persoName);
+    let persoCard = persoCardTemplate.content.cloneNode(true);
+    console.log(persoCard);
+    console.log(persoCard.h2);
+    persoCard.querySelector("h2").textContent = perso.nom
 
-    let keyNb = Object.keys(perso);
+    let persoP = persoCard.querySelectorAll("p span");
     let valuesNb = Object.values(perso);
-    for (let i = 1; i < keyNb.length; i++) {
-        let carac = document.createElement("p");
-        carac.textContent = `${keyNb[i]} : ${valuesNb[i]}`;
-        carac.classList.add("card-text");
-        persoCard.appendChild(carac);
+    for (let i = 1; i < valuesNb.length; i++) {
+        persoP[i-1].textContent = valuesNb[i];
     }
 
-    let btnDiv = document.createElement("div");
-    let selectBtn = document.createElement("btn");
-    selectBtn.textContent = "Sélectionner";
-    selectBtn.classList.add("btn", "btn-primary");
-    let deleteBtn = document.createElement("btn");
-    deleteBtn.textContent = "Supprimer";
-    deleteBtn.classList.add("btn", "btn-danger");
-    btnDiv.appendChild(selectBtn);
-    btnDiv.appendChild(deleteBtn);
-
-    persoCard.appendChild(btnDiv);
     persoList.appendChild(persoCard);
 }
 
-createPersoCards(personnage);
+personnages.forEach(perso => createPersoCards(perso));  
+
+// save all personnages
+function savePersos(personnages) {
+    let allPersos = JSON.stringify(personnages);
+    localStorage.setItem("allPersos", allPersos);
+}
