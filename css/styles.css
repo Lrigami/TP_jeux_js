@@ -46,7 +46,7 @@ main {
     justify-content: space-between;
 }
 
-.card-content h2, .card-content p {
+.card-content h3, .card-content p {
     padding-left: 10px;
 }
 
