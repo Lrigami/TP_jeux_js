@@ -32,7 +32,6 @@ main {
 
 .card {
     width: 18rem;
-    height: 100%;
 }
 
 .card-text {
@@ -42,6 +41,9 @@ main {
 .card-content {
     position: relative;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card-content h2, .card-content p {
